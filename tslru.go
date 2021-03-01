@@ -17,14 +17,14 @@ type TSCache struct {
 // p is set to the number of cpu cores to improve concurrent write performance
 func NewTSCache(size, p int) (c *TSCache, err error) {
 	if p < 1 || size < 1 {
-		return nil, errors.New("p cannot be less than 1")
+		return nil, errors.New("p,size cannot be less than 1")
 	}
 	if size < p {
 		p = size
 	}
 
 	var ts = new(TSCache)
-	ts.lru = make([]simplelru.LRUCache, p)
+	ts.lru = make([]*simplelru.LRUCache, p)
 
 	for i := 1; i < p; i++ {
 		// create a cache with default settings

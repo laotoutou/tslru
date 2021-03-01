@@ -40,7 +40,7 @@ type LRU struct {
 // entry is used to hold a value in the evictList
 type entry struct {
 	key     interface{}
-	value   unsafe.Pointer // *interface{}
+	value   interface{} // *interface{}
 	element *list.Element
 }
 

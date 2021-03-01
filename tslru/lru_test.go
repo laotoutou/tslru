@@ -20,7 +20,7 @@ func TestLRU(t *testing.T) {
 
 	for i, k := range l.Keys() {
 		if v, ok := l.Get(k); !ok || v != k || v != i+128 {
-			t.Fatalf("bad key: %v", k)
+			t.Fatalf("bad key: %v, v: %v", k, v)
 		}
 	}
 	for i := 0; i < 128; i++ {
