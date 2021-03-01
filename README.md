@@ -11,7 +11,7 @@ go get github.com/laotoutou/tslru
 ## 使用
 
 ```
-// 最大长度为4, 分片个数=4
+// 最大长度为5, 分片个数=4
 c, err := lru2.NewTSCache(5, 4)
 if err != nil {
 	fmt.Println(err)
