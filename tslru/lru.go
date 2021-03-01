@@ -39,7 +39,7 @@ type LRU struct {
 // entry is used to hold a value in the evictList
 type entry struct {
 	key     interface{}
-	value   interface{} // *interface{}
+	value   interface{}
 	element *list.Element
 }
 

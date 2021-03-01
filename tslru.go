@@ -48,7 +48,7 @@ func (c *TSCache) bucket(key string) simplelru.LRUCache {
 	if len(c.lru) == 1 {
 		return c.lru[0]
 	}
-	return c.lru[djb(key)&uint32(len(c.lru)-1)]
+	return c.lru[djb(key)%len(c.lru)]
 }
 
 // Purge is used to completely clear the cache.
