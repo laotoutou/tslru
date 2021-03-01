@@ -24,7 +24,7 @@ func NewTSCache(size, p int) (c *TSCache, err error) {
 	}
 
 	var ts = new(TSCache)
-	ts.lru = make([]*simplelru.LRUCache, p)
+	ts.lru = make([]simplelru.LRUCache, p)
 
 	for i := 1; i < p; i++ {
 		// create a cache with default settings
