@@ -47,12 +47,15 @@ type entry struct {
 var deltag = unsafe.Pointer(new(interface{}))
 
 func (e *entry) load() (interface{}, bool) {
+	return nil, false
 }
 
 func (e *entry) store() interface{} {
+	return nil
 }
 
 func (e *entry) delete() bool {
+	return false
 }
 
 // NewLRU constructs an LRU of the given size
