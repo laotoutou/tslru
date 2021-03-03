@@ -11,16 +11,21 @@ go get github.com/laotoutou/tslru
 ## 使用
 
 ```
-// 最大长度为5
-c, err := lru2.NewTSCache(5)
+lru, err := tslru.NewLRU(3)
 if err != nil {
-	fmt.Println(err)
+	fmt.Errorf("error=%s", err)
 	return
 }
 
-c.Add("1", 1)
+lru.Add(1, 1)
+lru.Add(2, 2)
+lru.Add(3, 3)
+lru.Add(4, 4)
 
-_, _ = c.Get("1")
+fmt.Println(lru.GetOldest())
+fmt.Println(lru.Keys())
+fmt.Println(lru.Get(2))
+fmt.Println(lru.Keys())
 ```
 
 ## 博客
