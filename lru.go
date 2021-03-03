@@ -80,7 +80,7 @@ func (c *LRU) work() {
 		case oldestAction:
 			act.o <- c.evictList.Back().Value.(*entry)
 		case iterAction:
-			for ele := c.evictList.Back(); ele != nil && ele != c.evictList.Front(); ele = ele.Prev() {
+			for ele := c.evictList.Back(); ele != nil; ele = ele.Prev() {
 				act.o <- ele.Value.(*entry).key
 			}
 			close(act.o)
