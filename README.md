@@ -28,6 +28,14 @@ fmt.Println(lru.Get(2))
 fmt.Println(lru.Keys())
 ```
 
+输出:
+```
+2 2 true
+[2 3 4]
+2 true
+[3 4 2]
+```
+
 ## 博客
 
 [LRU并发Get性能优化](https://laotoutou.github.io/posts/golang-lru-bing-fa-get-xingneng-youhua.html)
